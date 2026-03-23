@@ -174,7 +174,6 @@
 </div>
 
 <script>
-    // 根據衛福部 102 年公布之兒童及青少年生長身體質量指數(BMI)建議值完整校正
     const bmiStandard = {
         'M': {
             3: { underweight: 13.7, overweight: 17.0, obese: 17.8 },
@@ -378,8 +377,6 @@
         let minProtein = 0;
         let maxProtein = 0;
 
-        // 蛋白質防呆機制：確保不會因為最低絕對值過低，導致肉類份數失真
-        // 依據總熱量推算 14%~16% (減重期 16%~20%) 的合理蛋白質需求
         let minProteinPercentage = 0.14;
         let maxProteinPercentage = 0.16;
 
@@ -420,7 +417,6 @@
         let minMeatPortion = Math.round((minProtein - baseProteinSum) / 7);
         let maxMeatPortion = Math.round((maxProtein - baseProteinSum) / 7);
         
-        // 保底修正
         if(minMeatPortion < 1) minMeatPortion = 1;
         if(maxMeatPortion < 2) maxMeatPortion = 2;
 
@@ -446,7 +442,7 @@
                 <div class="exchange-card">
                     <h4>🍚 全穀雜糧類（主食）：每天約 ${bowlDisplay} 碗</h4>
                     <p>提供日常活動最需要的能量。<br>
-                    <strong>份量對照：1碗白飯 = 2碗熟麵條 = 2碗地瓜 = 4片薄吐司</strong>。</p>
+                    <strong>份量對照：1 碗白飯 = 2 碗稠稀飯 = 2 碗熟麵條 = 2 片吐司 = 2 個小地瓜 = 2 個中型馬鈴薯 = 12 湯匙麥片 = 將近 3 根玉米</strong>。</p>
                 </div>
 
                 <div class="exchange-card">
